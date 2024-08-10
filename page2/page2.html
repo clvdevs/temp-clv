@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Logic Visualizer</title>
+    <link rel="stylesheet" href="page2.css">
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.63.3/lib/codemirror.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.63.3/lib/codemirror.css">
+    <script src="https://cdn.jsdelivr.net/npm/d3@7.3.0/dist/d3.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="editor-container">
+            <header>Code Editor</header>
+            <textarea id="code-editor"></textarea>
+            <div>
+                <input type="radio" id="language-c" name="language" value="c" checked>
+                <label for="language-c">C</label>
+                <input type="radio" id="language-cpp" name="language" value="cpp">
+                <label for="language-cpp">C++</label>
+                <button id="run-code">Run Code</button>
+            </div>
+            <div class="output-container">
+                <header>Output Terminal</header>
+                <pre id="output-terminal"></pre>
+            </div>
+        </div>
+        <div class="visualization-container">
+            <header>Visualization</header>
+            <video id="generated-video" controls width="640" height="480">
+                Your browser does not support the video tag.
+            </video>
+            <button id="download-video">Download Video</button>
+        </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+    <script src="videoGeneration.js"></script>
+</body>
+</html>
